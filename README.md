@@ -95,7 +95,7 @@
 
   > 왜? 참조를 재할당 할 수 없으므로, 버그로 이어지고 이해하기 어려운 코드가 되는것을 방지합니다.
 
-    ```javascript
+  ```javascript
     // bad
     var a = 1;
     var b = 2;
@@ -103,7 +103,7 @@
     // good
     const a = 1;
     const b = 2;
-    ```
+  ```
 
   - [2.2](#2.2) <a name='2.2'></a> If you must reassign references, use `let` instead of `var`.
   - [2.2](#2.2) <a name='2.2'></a> 참조를 재할당 해야한다면 `var` 대신 `let` 을 사용하십시오.
@@ -112,7 +112,7 @@
 
   > 왜? `var` 같은 함수스코프 보다는 오히려 블록스코프의 `let`
 
-    ```javascript
+  ```javascript
     // bad
     var count = 1;
     if (true) {
@@ -124,7 +124,7 @@
     if (true) {
       count += 1;
     }
-    ```
+  ```
 
   - [2.3](#2.3) <a name='2.3'></a> Note that both `let` and `const` are block-scoped.
   - [2.3](#2.3) <a name='2.3'></a> `let` 과 `const` 는 같이 블록스코프라는것을 유의하십시오.
@@ -200,7 +200,7 @@
 
   > 왜? 오브젝트의 모든 프로퍼티를 한 장소에서 정의 할 수 있습니다.
 
-    ```javascript
+  ```javascript
     function getKey(k) {
       return a `key named ${k}`;
     }
@@ -218,13 +218,13 @@
       name: 'San Francisco',
       ［getKey('enabled')]: true
     };
-    ```
+  ```
 
   <a name="es6-object-shorthand"></a>
   - [3.5](#3.5) <a name='3.5'></a> Use object method shorthand.
   - [3.5](#3.5) <a name='3.5'></a> 메소드의 단축구문을 이용해 주십시오.
 
-    ```javascript
+  ```javascript
     // bad
     const atom = {
       value: 1,
@@ -242,7 +242,7 @@
         return atom.value + value;
       },
     };
-    ```
+  ```
 
   <a name="es6-object-concise"></a>
   - [3.6](#3.6) <a name='3.6'></a> Use property value shorthand.
@@ -252,7 +252,7 @@
 
   > 왜? 기술과 설명이 간결해지기 때문입니다.
 
-    ```javascript
+```javascript
     const lukeSkywalker = 'Luke Skywalker';
 
     // bad
@@ -264,7 +264,7 @@
     const obj = {
       lukeSkywalker,
     };
-    ```
+```
 
   - [3.7](#3.7) <a name='3.7'></a> Group your shorthand properties at the beginning of your object declaration.
   - [3.7](#3.7) <a name='3.7'></a> 프로퍼티의 단축구문은 오브젝트 선언의 시작부분에 그룹화 해주십시오.
@@ -273,7 +273,7 @@
 
   > 왜? 어떤 프로퍼티가 단축구문을 이용하고 있는지가 알기쉽기 때문입니다.
 
-    ```javascript
+```javascript
     const anakinSkywalker = 'Anakin Skywalker';
     const lukeSkywalker = 'Luke Skywalker';
 
@@ -296,7 +296,7 @@
       episodeThree: 3,
       mayTheFourth: 4,
     };
-    ```
+```
 
 **[⬆ back to top](#목차)**
 
@@ -364,7 +364,7 @@
 
   > 왜? 구조화대입을 이용하는 것으로 프로퍼티를 위한 임시적인 참조의 작성을 줄일 수 있습니다.
 
-    ```javascript
+  ```javascript
     // bad
     function getFullName(user) {
       const firstName = user.firstName;
@@ -383,12 +383,12 @@
     function getFullName({ firstName, lastName }) {
       return `${firstName} ${lastName}`;
     }
-    ```
+```
 
   - [5.2](#5.2) <a name='5.2'></a> Use array destructuring.
   - [5.2](#5.2) <a name='5.2'></a> 배열의 구조화대입을 이용해 주십시오.
 
-    ```javascript
+```javascript
     const arr = [1, 2, 3, 4];
 
     // bad
@@ -397,7 +397,7 @@
 
     // good
     const [first, second] = arr;
-    ```
+```
 
   - [5.3](#5.3) <a name='5.3'></a> Use object destructuring for multiple return values, not array destructuring.
   - [5.3](#5.3) <a name='5.3'></a> 복수의 값을 반환하는 경우는 배열의 구조화대입이 아닌 오브젝트의 구조화대입을 이용해 주십시오.
@@ -406,7 +406,7 @@
 
   > 왜? 이렇게 함으로써 나중에 호출처에 영향을 주지않고 새로운 프로퍼티를 추가하거나 순서를 변경할수 있습니다.
 
-    ```javascript
+```javascript
     // bad
     function processInput(input) {
       // then a miracle occurs
@@ -428,7 +428,7 @@
     // the caller selects only the data they need
     // 호출처에서는 필요한 데이터만 선택하면 됩니다.
     const { left, right } = processInput(input);
-    ```
+```
 
 
 **[⬆ back to top](#목차)**
@@ -476,7 +476,7 @@
 
   > 왜? Template strings 는 문자열 보간기능과 적절한 줄바꿈 기능을 갖는 간결한 구문으로 가독성이 좋기 때문입니다.
 
-    ```javascript
+```javascript
     // bad
     function sayHi(name) {
       return 'How are you, ' + name + '?';
@@ -491,7 +491,8 @@
     function sayHi(name) {
       return `How are you, ${name}?`;
     }
-    ```
+```
+
   - [6.5](#6.5) <a name='6.5'></a> Never use `eval()` on a string, it opens too many vulnerabilities.
   - [6.5](#6.5) <a name='6.5'></a> 절대로 `eval()` 을 이용하지 마십시오. 이것은 많은 취약점을 만들기 때문입니다.
 
@@ -508,7 +509,7 @@
   > 왜? 이름이 부여된 함수선언은 콜스택에서 간단하게 확인하는 것이 가능합니다. 또한 함수선언은 함수의 본체가 hoist 되어집니다. 그에 반해 함수식은 참조만이 hoist 되어집니다.
   이 룰에 의해 함수식의 부분을 항상 [Arrow함수](#arrow함수arrow-functions)에서 이용하는것이 가능합니다.
 
-    ```javascript
+```javascript
     // bad
     const foo = function () {
     };
@@ -516,18 +517,18 @@
     // good
     function foo() {
     }
-    ```
+```
 
   - [7.2](#7.2) <a name='7.2'></a> Function expressions:
   - [7.2](#7.2) <a name='7.2'></a> 함수식
 
-    ```javascript
+```javascript
     // immediately-invoked function expression (IIFE)
     // 즉시 실행 함수식(IIFE)
     (() => {
       console.log('Welcome to the Internet. Please follow me.');
     })();
-    ```
+```
 
   - [7.3](#7.3) <a name='7.3'></a> Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.
   - [7.3](#7.3) <a name='7.3'></a> 함수이외의 블록 (if나 while같은) 안에서 함수를 선언하지 마십시오. 변수에 함수를 대입하는 대신 브라우저들은 그것을 허용하지만 모두가 다르게 해석합니다.
@@ -575,7 +576,7 @@
 
   > 왜? `...` 을 이용하는것으로 몇개의 파라메터를 이용하고 싶은가를 확실하게 할 수 있습니다. 더해서 rest 파라메터는 `arguments` 와 같은 Array-like 오브젝트가 아닌 진짜 Array 입니다.
 
-    ```javascript
+```javascript
     // bad
     function concatenateAll() {
       const args = Array.prototype.slice.call(arguments);
@@ -586,7 +587,7 @@
     function concatenateAll(...args) {
       return args.join('');
     }
-    ```
+```
 
   <a name="es6-default-parameters"></a>
   - [7.7](#7.7) <a name='7.7'></a> Use default parameter syntax rather than mutating function arguments.
@@ -684,7 +685,7 @@
 
   > 이용해야만 하지 않나？ 복잡한 함수에서 로직을 정의한 함수의 바깥으로 이동하고 싶을때.
 
-    ```javascript
+```javascript
     // bad
     [1, 2, 3].map(function (x) {
       const y = x + 1;
@@ -696,7 +697,7 @@
       const y = x + 1;
       return x * y;
     });
-    ```
+```
 
   - [8.2](#8.2) <a name='8.2'></a> If the function body consists of a single expression, feel free to omit the braces and use the implicit return. Otherwise use a `return` statement.
   - [8.2](#8.2) <a name='8.2'></a> 함수의 본체가 하나의 식으로 구성된 경우에는 중괄호({})를 생략하고 암시적 return을 이용하는것이 가능합니다. 그 외에는 `return` 문을 이용해 주십시오.
@@ -709,7 +710,7 @@
 
   > 사용해야만 하지 않아? 오브젝트를 반환할때.
 
-    ```javascript
+```javascript
     // good
     [1, 2, 3].map(number => `A string containing the ${number}.`);
 
@@ -724,7 +725,7 @@
       const nextNumber = number + 1;
       return `A string containing the ${nextNumber}.`;
     });
-    ```
+```
 
   - [8.3](#8.3) <a name='8.3'></a> In case the expression spans over multiple lines, wrap it in parentheses for better readability.
   - [8.3](#8.3) <a name='8.3'></a> 식이 복수행에 걸쳐있을 경우는 가독성을 더욱 좋게하기 위해 소괄호()로 감싸 주십시오.
@@ -733,7 +734,7 @@
 
   > 왜? 함수의 개시와 종료부분이 알기쉽게 보이기 때문입니다.
 
-    ```js
+```javascript
     // bad
     [1, 2, 3].map(number => 'As time went by, the string containing the ' +
       `${number} became much longer. So we needed to break it over multiple ` +
@@ -745,7 +746,7 @@
       `As time went by, the string containing the ${number} became much ` +
       'longer. So we needed to break it over multiple lines.'
     ));
-    ```
+```
 
   - [8.4](#8.4) <a name='8.4'></a> If your function only takes a single argument, feel free to omit the parentheses.
   - [8.4](#8.4) <a name='8.4'></a> 함수의 인수가 하나인 경우 소괄호()를 생략하는게 가능합니다.
@@ -754,13 +755,14 @@
 
   > 왜? 별로 보기 어렵지 않기 때문입니다.
 
-    ```javascript
+
+```javascript
     // good
     [1, 2, 3].map(x => x * x);
 
     // good
     [1, 2, 3].reduce((y, x) => x + y);
-    ```
+```
 
 **[⬆ back to top](#목차)**
 
@@ -774,7 +776,7 @@
 
   > 왜? `class` 구문은 간결하고 의미를 알기 쉽기 때문입니다.
 
-    ```javascript
+```javascript
     // bad
     function Queue(contents = []) {
       this._queue = [...contents];
@@ -796,7 +798,7 @@
         return value;
       }
     }
-    ```
+```
 
   - [9.2](#9.2) <a name='9.2'></a> Use `extends` for inheritance.
   - [9.2](#9.2) <a name='9.2'></a> 상속은 `extends` 를 이용해 주십시오.
@@ -805,7 +807,7 @@
 
   > 왜? `instanceof` 를 파괴하지 않고 프로토타입 상속을 하기 위해 빌트인 된 방법이기 때문입니다.
 
-    ```javascript
+```javascript
     // bad
     const inherits = require('inherits');
     function PeekableQueue(contents) {
@@ -822,7 +824,7 @@
         return this._queue[0];
       }
     }
-    ```
+```
 
   - [9.3](#9.3) <a name='9.3'></a> Methods can return `this` to help with method chaining.
   - [9.3](#9.3) <a name='9.3'></a> 메소드의 반환값으로 `this` 를 반환하는 것으로 메소드채이닝을 할 수 있습니다.
@@ -893,7 +895,7 @@
 
   > 왜? 모듈은 미래가 있습니다. 지금 그 미래를 사용하여 시작합시다.
 
-    ```javascript
+```javascript
     // bad
     const AirbnbStyleGuide = require('./AirbnbStyleGuide');
     module.exports = AirbnbStyleGuide.es6;
@@ -905,7 +907,7 @@
     // best
     import { es6 } from './AirbnbStyleGuide';
     export default es6;
-    ```
+```
 
   - [10.2](#10.2) <a name='10.2'></a> Do not use wildcard imports.
   - [10.2](#10.2) <a name='10.2'></a> wildcard import 는 이용하지 마십시오.
@@ -914,13 +916,13 @@
 
   > 왜? single default export 임을 주의할 필요가 있습니다.
 
-    ```javascript
+```javascript
     // bad
     import * as AirbnbStyleGuide from './AirbnbStyleGuide';
 
     // good
     import AirbnbStyleGuide from './AirbnbStyleGuide';
-    ```
+```
 
   - [10.3](#10.3) <a name='10.3'></a>And do not export directly from an import.
   - [10.3](#10.3) <a name='10.3'></a> import 문으로부터 직접 export 하는것은 하지말아 주십시오.
@@ -929,7 +931,7 @@
 
   > 왜? 한줄짜리는 간결하지만 import 와 export 방법을 명확히 한가지로 해서 일관성을 갖는 것이 가능합니다.
 
-    ```javascript
+```javascript
     // bad
     // filename es6.js
     export { es6 as default } from './airbnbStyleGuide';
@@ -938,7 +940,7 @@
     // filename es6.js
     import { es6 } from './AirbnbStyleGuide';
     export default es6;
-    ```
+```
 
 **[⬆ back to top](#목차)**
 
@@ -951,7 +953,7 @@
 
   > 왜? 고급함수는 immutable(불변)룰을 적용합니다. side effect에 대해 추측하는거보다 값을 반환하는 순수 함수를 다루는게 간단하기 때문입니다.
 
-    ```javascript
+```javascript
     const numbers = [1, 2, 3, 4, 5];
 
     // bad
@@ -970,7 +972,7 @@
     // best (use the functional force)
     const sum = numbers.reduce((total, num) => total + num, 0);
     sum === 15;
-    ```
+```
 
   - [11.2](#11.2) <a name='11.2'></a> Don't use generators for now.
   - [11.2](#11.2) <a name='11.2'></a> 현시점에서는 generators는 이용하지 마십시오.
@@ -1064,7 +1066,7 @@
 
   > 왜? 이전에 할당한 변수에 대해 나중에 새 변수를 추가하는 경우에 유용하기 때문입니다.
 
-    ```javascript
+```javascript
     // bad
     let i, len, dragonball,
         items = getItems(),
@@ -1083,7 +1085,7 @@
     let dragonball;
     let i;
     let length;
-    ```
+```
 
   - [13.4](#13.4) <a name='13.4'></a> Assign variables where you need them, but place them in a reasonable place.
   - [13.4](#13.4) <a name='13.4'></a> 변수를 할당할때는 필요하고 합리적인 장소에 두시기 바랍니다.
@@ -1092,7 +1094,7 @@
 
   > 왜? `let` 과 `const` 는 블록스코프이기 때문입니다. 함수스코프가 아닙니다.
 
-    ```javascript
+```javascript
     // good
     function() {
       test();
@@ -1134,7 +1136,7 @@
 
       return true;
     }
-    ```
+```
 
 **[⬆ back to top](#목차)**
 
@@ -1809,7 +1811,7 @@
 
   > 왜? 이것은 깨끗한 git의 diffs 로 이어집니다. 또한 Babel과 같은 트랜스파일러는 transpile 하는 사이에 쓸데없는 끝의 콤마를 제거합니다. 이것은 레거시브라우저에서의 [불필요한 콤마 문제](./README.md#commas)를 고민할 필요가 없다는것을 의미합니다.
 
-    ```javascript
+```javascript
     // bad - git diff without trailing comma
     const hero = {
          firstName: 'Florence',
@@ -1846,7 +1848,7 @@
       'Batman',
       'Superman',
     ];
-    ```
+```
 
 **[⬆ back to top](#목차)**
 
